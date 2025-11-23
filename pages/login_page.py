@@ -1,12 +1,12 @@
 """
-Best Buy Login Page Object Model
+Login Page Object Model
 Learning: Page Object Model separates page elements and actions from test code
 """
 
 from pages.base_page import BasePage
 
 
-class BestBuyLoginPage(BasePage):
+class LoginPage(BasePage):
     """Learning: This class represents the Best Buy login page and its elements"""
 
     def __init__(self, page):
