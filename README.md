@@ -72,7 +72,7 @@ poetry run behave
 ### Run specific feature
 
 ```bash
-poetry run behave features/login_page.feature
+poetry run behave features/bestbuy_login_page.feature
 ```
 
 ### Run tests with specific tags
