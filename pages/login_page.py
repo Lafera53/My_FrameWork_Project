@@ -16,24 +16,27 @@ class LoginPage(BasePage):
 
         # Learning: Define all locators at the top for easy maintenance
         # Locators for login page elements
-        self.account_button = "text=Account"  # Top navigation account button
-        self.sign_in_button = "text=Sign In"  # Sign in button from dropdown
-        self.email_input = "input[type='email']"  # Email input field
-        self.password_input = "input[type='password']"  # Password input field
-        self.submit_button = "button[type='submit']"  # Login submit button
-        self.error_message = ".error-message"  # Error message container
-        self.create_account_link = "text=Create an Account"  # Create account link
-        self.forgot_password_link = "text=Forgot your password?"  # Password reset link
+        self.page_title =  "h1"  # Page title element
+        self.sign_in_button = "//*[text()='Sign In']" # Sign in button from the dropdown
+        self.email_input = "//input[@type='email']"  # Email input field
+        self.continue_button = "//*[text()='Continue']"
+        self.use_password_radio_button = "//input[@id='password-radio']"
+        self.password_input = "//input[@type='password']"  # Password input field
+        self.signin_options_continue_button = "//button[@type='submit']"  # Continue button after email
+
+        # self.error_message = ".error-message"  # Error message container
+        # self.create_account_link = "text=Create an Account"  # Create account link
+        # self.forgot_password_link = "text=Forgot your password?"  # Password reset link
 
     def navigate_to_login(self):
         """Learning: Navigate to Best Buy login page"""
         self.logger.info("Navigating to Best Buy login page")
-        self.navigate("https://www.bestbuy.com/identity/signin")
+        self.navigate("https://www.bestbuy.com/home")
 
-    def click_account_button(self):
-        """Click the Account button in top navigation"""
-        self.logger.info("Clicking Account button")
-        self.click_element(self.account_button)
+    # def click_account_button(self):
+    #     """Click the Account button in top navigation"""
+    #     self.logger.info("Clicking Account button")
+    #     self.click_element(self.account_button)
 
     def click_sign_in(self):
         """Click the Sign In button from account dropdown"""
@@ -50,10 +53,28 @@ class LoginPage(BasePage):
         self.logger.info("Entering password")
         self.fill_input(self.password_input, password)
 
-    def click_submit(self):
-        """Click the submit/login button"""
-        self.logger.info("Clicking submit button")
-        self.click_element(self.submit_button)
+    # def click_submit(self):
+    #     """Click the submit/login button"""
+    #     self.logger.info("Clicking submit button")
+    #     self.click_element(self.submit_button)
+
+    def click_continue_button(self):
+        """Click the Continue button after entering email"""
+        self.logger.info("Clicking Continue button")
+        self.click_element(self.continue_button)
+
+    def click_signin_options_continue_button(self):
+        """Click the Continue button on signin options page"""
+        self.logger.info("Clicking Signin Options Continue button")
+        self.click_element(self.signin_options_continue_button)
+
+    def click_use_password_radio_button(self):
+        """Click the Use Password radio button"""
+        self.logger.info("Clicking Use Password radio button")
+        self.click_element(self.use_password_radio_button)
+
+
+
 
     def login(self, email, password):
         """

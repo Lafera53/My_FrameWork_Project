@@ -11,10 +11,10 @@ def before_all(context):
 	logger.info("=" * 80)
 	logger.info("=== Starting test execution ===")
 	logger.info("Launching Playwright and creating browser instance")
-	# Launch Playwright and create browser instance
+	# Launch Playwright and create a browser instance
 	context.playwright = sync_playwright().start()
 	context.browser = context.playwright.chromium.launch(
-		headless=False  # Set to True for headless mode
+		headless=False  # Set to True for headless mode to run tests in GitHub Actions
 	)
 	logger.debug("Browser instance created successfully")
 
