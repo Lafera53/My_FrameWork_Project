@@ -9,9 +9,11 @@ Feature: Login Page
   @login @regression @positive
   Scenario: Successful login with valid credentials
     When I enter "lauravstesting@gmail.com" in the email field
+    And I click the continue button
+    And I select Use password option
     And I enter "B8stB8y38!" in the password field
-    And I click the login button
-#    And Wait for 5 seconds
+    And I click the signin option continue button
+    And Wait for 5 seconds
 #    Then I should be redirected to the devices page
 
   @login @negative
